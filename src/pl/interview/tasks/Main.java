@@ -11,9 +11,14 @@ public class Main {
      */
 
     public static void main(String[] args) {
+        int rangeOfSearch = 1000000;
+        System.out.println("Sum of all numbers is equal: " + sumOfAllCuriousNumber(rangeOfSearch) + " (range: " + rangeOfSearch + ")");
+
+    }
+
+    public static int sumOfAllCuriousNumber (int rangeOfSearch){
         int[] factorial = new int[10];
         int sumOfAllCuriousNumber = 0;
-        int rangeOfSearch = 1000000;
 
         factorial[0] = 1;
         for (int i = 1; i<factorial.length; i++){
@@ -23,8 +28,8 @@ public class Main {
         for (int i=10; i < rangeOfSearch; i++){
             sumOfAllCuriousNumber += findCuriousNumber(factorial, i);
         }
-        System.out.println("Sum of all numbers is equal: " + sumOfAllCuriousNumber + " (range: " + rangeOfSearch + ")");
 
+        return sumOfAllCuriousNumber;
     }
 
     public static int findCuriousNumber (int[] factorial, int number){
@@ -42,7 +47,5 @@ public class Main {
         }
         else
             return 0;
-
     }
-
 }
